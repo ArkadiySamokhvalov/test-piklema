@@ -1,6 +1,13 @@
 /* color palette from <https://github.com/vuejs/theme> */
 :root {
-  --color-background: rgb(29 28 28);
-  --color-white: white;
-  --color-red: red;
+  --color-background: #1d1c1c;
+  --color-white: #fff;
+  --color-gray: #808080;
+  --color-gray-light: #d3d3d3;
+  --color-gray-dark: #a9a9a9;
+  --color-danger: #f00;
+  --color-danger-hover: #fb5f5f;
+  --color-success: #008000;
+  --color-success-hover: #02c802;
+  --min-control-height: 48px;
 }

@@ -65,25 +65,25 @@ onMounted(() => {
 }
 
 .checkbox-icon {
-  color: gray;
+  color: var(--color-gray);
 }
 
 .button {
   border: none;
   background-color: transparent;
-  color: var(--color-red);
+  color: var(--color-danger);
   transition: 0.4s;
   cursor: pointer;
 
   &:hover {
-    color: rgb(251 95 95);
+    color: var(--color-danger-hover);
   }
 }
 
 .checkbox-label,
 .button {
   flex-shrink: 0;
-  padding: 0 8px;
+  padding: 0 0.5rem;
   width: 40px;
   height: 40px;
 }

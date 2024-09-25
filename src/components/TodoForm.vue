@@ -39,28 +39,27 @@ function addTask(task: string | undefined) {
 .todo-form {
   display: flex;
   width: 100%;
-  height: 48px;
+  height: var(--min-control-height);
 }
 
 .input {
-  padding: 0 16px;
+  padding: 0 2rem;
   width: 100%;
-  height: 100%;
   outline-offset: -2px;
   border: none;
 }
 
 .button {
-  padding: 0 8px;
+  padding: 0 0.5rem;
   width: 40px;
   box-shadow: none;
   border: none;
   background-color: var(--color-white);
-  color: green;
+  color: var(--color-success);
   transition: 0.4s;
 
   &:hover {
-    color: rgb(2 200 2);
+    color: var(--color-success-hover);
   }
 
   svg {

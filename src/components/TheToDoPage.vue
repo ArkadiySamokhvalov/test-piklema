@@ -16,7 +16,7 @@ import TodoList from './TodoList.vue';
 
   @media (width >= 768px) {
     margin-inline: auto;
-    padding: 48px 0;
+    padding: 3rem 0;
     max-width: 768px;
   }
 }

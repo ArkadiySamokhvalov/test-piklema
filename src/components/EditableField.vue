@@ -73,13 +73,17 @@ function onChange() {
   transition: 0.4s;
 
   &:hover {
-    background-color: lightgray;
+    background-color: var(--color-gray-light);
   }
 }
 
 .task-completed {
   position: relative;
-  color: lightgrey;
+  color: var(--color-gray-light);
+
+  &:hover {
+    color: var(--color-gray-dark);
+  }
 
   &::after {
     position: absolute;
@@ -87,7 +91,7 @@ function onChange() {
     left: 0;
     width: 100%;
     height: 1px;
-    background-color: gray;
+    background-color: var(--color-gray);
     animation-duration: 0.4s;
     animation-fill-mode: forwards;
     animation-iteration-count: 1;
