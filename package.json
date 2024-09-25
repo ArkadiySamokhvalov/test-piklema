@@ -1,5 +1,5 @@
 {
-  "name": "vue-boilerplate",
+  "name": "test-piklema",
   "version": "0.0.0",
   "private": true,
   "type": "module",
@@ -44,6 +44,7 @@
     "!**/*.{js,jsx,ts,tsx,vue,css,scss}": "prettier --write --ignore-unknown"
   },
   "dependencies": {
+    "pinia": "^2.2.2",
     "vue": "^3.4.29",
     "vue-router": "^4.3.3"
   },

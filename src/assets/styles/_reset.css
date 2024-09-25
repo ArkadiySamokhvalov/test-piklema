@@ -89,6 +89,5 @@ select {
 
 svg:not([width], [height]) {
   width: auto;
-  height: 1.5ex;
 }
 /* stylelint-enable */
