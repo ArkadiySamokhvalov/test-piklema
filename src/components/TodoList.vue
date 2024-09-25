@@ -2,7 +2,23 @@
   <transition name="todo-list" mode="out-in">
     <transition-group v-if="todoList.length > 0" tag="ol" class="list" name="todo" appear>
       <li class="list-item" v-for="todo in todoList" :key="todo.id">
-        <EditableField :id="todo.id" :task="todo.task" @change="changeTask" v-bind="$attrs" />
+        <button class="button" @click="toggleCompleted(todo.id)">
+          <BaseIcon v-if="!todo.completed" class="checkbox-icon">
+            <CheckboxUncheck />
+          </BaseIcon>
+
+          <BaseIcon v-if="todo.completed" class="checkbox-icon">
+            <CheckboxCheck />
+          </BaseIcon>
+        </button>
+
+        <EditableField
+          :id="todo.id"
+          :task="todo.task"
+          :completed="todo.completed"
+          @change="changeTask"
+          v-bind="$attrs"
+        />
 
         <button class="button" @click="removeTodo(todo.id)">
           <BaseIcon>
@@ -19,6 +35,8 @@
 import EditableField from './EditableField.vue';
 import BaseIcon from './BaseIcon.vue';
 import CancelInCircle from './icons/CancelInCircle.vue';
+import CheckboxCheck from './icons/CheckboxCheck.vue';
+import CheckboxUncheck from './icons/CheckboxUncheck.vue';
 
 import { useTodoListStore } from '@/store/useTodoListStore';
 import { storeToRefs } from 'pinia';
@@ -26,7 +44,7 @@ import { onMounted } from 'vue';
 
 const store = useTodoListStore();
 const { todoList } = storeToRefs(store);
-const { removeTodo, changeTask } = store;
+const { toggleCompleted, removeTodo, changeTask } = store;
 
 onMounted(() => {
   console.log(todoList);

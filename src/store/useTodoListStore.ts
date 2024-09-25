@@ -3,6 +3,7 @@ import { defineStore } from 'pinia';
 type ToDoItem = {
   id: number;
   task: string;
+  completed: boolean;
 };
 
 export const useTodoListStore = defineStore('todoList', {
@@ -12,7 +13,7 @@ export const useTodoListStore = defineStore('todoList', {
   }),
   actions: {
     addTodo(task: string) {
-      this.todoList.push({ task, id: this.id++ });
+      this.todoList.push({ task, id: this.id++, completed: false });
     },
     removeTodo(id: number) {
       this.todoList = this.todoList.filter((item) => item.id !== id);
@@ -21,6 +22,13 @@ export const useTodoListStore = defineStore('todoList', {
       const todo = this.todoList.find((item) => item.id === id);
       if (todo) {
         todo.task = task;
+      }
+    },
+    toggleCompleted(id: number) {
+      const todo = this.todoList.find((item) => item.id === id);
+      if (todo) {
+        todo.completed = !todo.completed;
+        localStorage.setItem('todoList', JSON.stringify(this.todoList));
       }
     }
   }
